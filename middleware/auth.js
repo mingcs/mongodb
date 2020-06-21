@@ -16,7 +16,6 @@ module.exports = function (req, res, next) {
     req.user = decoded.user;
     next();
   } catch (err) {
-    console.error('something wrong with auth middleware');
     res.status(500).json({ msg: 'Server Error' });
   }
 };
